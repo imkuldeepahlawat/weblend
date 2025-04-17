@@ -1,0 +1,29 @@
+# Dependencies
+node_modules
+dist
+build
+
+# Build files
+*.min.js
+*.bundle.js
+
+# Generated files
+coverage
+*.log
+
+# IDE
+.vscode
+.idea
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+.git
+.gitignore
+
+# Project specific
+public
+.env
+.env.local 
