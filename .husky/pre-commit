@@ -1,23 +1,30 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-echo "Running pre-commit checks..."
+echo "🚀 Running pre-commit checks..."
 
 # Format code with Prettier
-echo "Formatting code..."
-yarn prettier --write "src/**/*.{ts,tsx,js,jsx,json,css,scss}"
+echo "📝 Formatting code..."
+yarn prettier --write "src/**/*.{ts,tsx,js,jsx,json,css,scss}" || {
+    echo "❌ Prettier formatting failed"
+    exit 1
+}
 
 # Type checking
-echo "Checking TypeScript types..."
-yarn tsc --noEmit
+echo "🔍 Checking TypeScript types..."
+yarn tsc --noEmit || {
+    echo "❌ TypeScript check failed"
+    exit 1
+}
 
 # Build verification
-echo "Verifying build..."
-yarn build
-
-# Run tests
-# echo "Running tests..."
-# yarn test
+echo "🏗️ Verifying build..."
+yarn build || {
+    echo "❌ Build verification failed"
+    exit 1
+}
 
 # Add any formatted files back to staging
-git add . 
+git add .
+
+echo "✅ Pre-commit checks passed!" 

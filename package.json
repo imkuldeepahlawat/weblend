@@ -1,27 +1,27 @@
 {
-  "name": "vital",
+  "name": "weblend",
   "type": "module",
   "version": "1.0.0",
-  "description": "Starter template for Vite with React (TypeScript). Supports Tailwind. Vitest and @react/testing-library configured and ready to go. Also ESLint, Prettier, Husky, Commit-lint and Atomic Design for components.",
-  "homepage": "https://github.com/jvidalv/vital#readme",
+  "description": "Web-based 3D creation platform that brings professional 3D tools to your browser",
+  "homepage": "https://github.com/imkuldeepahlawat/weblend#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jvidalv/vital.git"
+    "url": "git+https://github.com/imkuldeepahlawat/weblend.git"
   },
-  "author": "Josep Vidal <josepvidalvidal@gmail.com>",
+  "author": "Kuldeep Ahlawat <imkuldeepahlawat@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jvidalv/vital/issues"
+    "url": "https://github.com/imkuldeepahlawat/weblend/issues"
   },
   "keywords": [
-    "react",
-    "vite",
+    "3d",
+    "webgl",
+    "threejs",
+    "blender",
+    "modeling",
+    "animation",
     "typescript",
-    "tailwind",
-    "template",
-    "starter",
-    "eslint",
-    "prettier"
+    "react"
   ],
   "browserslist": [
     ">0.2%",
@@ -36,16 +36,19 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare": "husky install",
+    "precommit": "yarn prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,scss}\" && yarn tsc --noEmit && yarn build"
   },
   "dependencies": {
     "@heroicons/react": "2.1.5",
+    "husky": "^9.1.7",
     "react": "18.3.1",
     "react-dom": "18.3.1"
   },
   "devDependencies": {
-    "@eslint/js": "9.13.0",
     "@commitlint/cli": "19.5.0",
+    "@eslint/js": "9.13.0",
     "@tailwindcss/forms": "0.5.9",
     "@types/react": "18.3.12",
     "@types/react-dom": "18.3.1",
